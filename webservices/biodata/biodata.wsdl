@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?> 
+ <definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" 
+	xmlns:tns="http://localhost/eprofile/webservice/biodata/getBiodataEntry" 
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+	xmlns="http://schemas.xmlsoap.org/wsdl/" 
+	targetNamespace="http://localhost/webservice/biodata/getBiodataEntry">
+  <types>
+  <xsd:schema targetNamespace="http://localhost/webservice/biodata/getBiodataEntry">
+  <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" /> 
+  <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" /> 
+  </xsd:schema>
+  </types>
+
+   <message name="getBiodataEntryRequest">
+     <part name="empId" type="xsd:string" />
+   </message>
+
+   <message name="getBiodataEntryResponse">
+      <part name="return" type="xsd:string" />
+   </message>
+   
+  <portType name="getBiodataEntryPortType">
+    <operation name="getBiodataEntry">
+	    <input message="tns:getBiodataEntryRequest" /> 
+	    <output message="tns:getBiodataEntryResponse" /> 
+    </operation>
+  </portType>
+
+  <binding name="getBiodataEntryBinding" type="tns:getBiodataEntryPortType">
+	  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" /> 
+	  <operation name="getBiodataEntry">
+	    <soap:operation soapAction="urn:xmethods-delayed-quotes#getBiodataEntry" /> 
+	    <input>
+		    <soap:body use='encoded' namespace='urn:xmethods-delayed-quotes' encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" /> 
+	    </input>
+	    <output>
+		    <soap:body use='encoded' namespace='urn:xmethods-delayed-quotes' encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" /> 
+	     </output>
+	  </operation>
+  </binding>
+
+ <service name="getBiodataEntry">
+ <port name="getBiodataEntryPortType" binding="tns:getBiodataEntryBinding">
+	  <soap:address location="http://personnel.dusit.ac.th/eprofile/webservices/biodata/biodataService.php" /> 
+  </port>
+  </service>
+</definitions>

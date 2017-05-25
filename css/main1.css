@@ -1,0 +1,111 @@
+@charset "utf-8";
+/* CSS Document */
+
+body,td,th {
+	font-family: Tahoma, "Microsoft Sans Serif", Verdana;
+	font-size:12px;
+
+
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+#emp_head{
+	position: relative;
+	color:#ECDEE2;
+	font-size:16px;
+	font-weight:bold;
+	text-align:center;
+	float:left;
+	left: 15px;
+	top: 22px;
+}
+
+#name_head{
+	position: relative;
+	color:#ECDEE2;
+	text-align:right;
+	font-size:20px;
+	font-weight:bold;
+	float:right;
+	right: 65px;
+	top: 28px;
+
+}
+
+.label-icon{
+	height: 20px;
+	width: auto;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	border: 1px solid #d187d2;
+	color: #d187d2;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	margin-right: 2px;
+	margin-left: 2px;
+}
+
+.label-icon-alert{
+	height: 20px;
+	width: auto;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	border: 1px solid #CC0000;
+	color: #CC0000;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	margin-right: 2px;
+	margin-left: 2px;
+}
+
+.label-icon-success{
+	height: 20px;
+	width: auto;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	border: 1px solid #009900;
+	color: #009900;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	margin-right: 2px;
+	margin-left: 2px;
+}
+
+.icon-success{
+	height: 20px;
+	width: auto;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	color: #009900;;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	margin-right: 2px;
+	margin-left: 2px;
+}
+
+.icon-alert{
+	height: 20px;
+	width: auto;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	color: #CC0000;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	margin-right: 2px;
+	margin-left: 2px;
+}

@@ -1,0 +1,19 @@
+body{
+	margin:0px;
+}
+
+table{
+	font-size:12px;
+}
+
+.tb_head{
+	height:30px;
+	text-align:center;
+	background-color:#E1E1E1;
+	font-weight:bold;
+}
+
+.title{
+	font-size:18px;
+	font-weight:bold;
+}

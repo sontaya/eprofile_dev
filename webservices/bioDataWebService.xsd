@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://personnel.dusit.ac.th/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://personnel.dusit.ac.th/">
+
+<xs:element name="Exception" type="tns:Exception"/>
+<xs:element name="bioData" type="tns:bioData"/>
+<xs:element name="bioDataResponse" type="tns:bioDataResponse"/>
+<xs:element name="ByCriteria" type="tns:ByCriteria"/>
+<xs:element name="ByCriteriaResponse" type="tns:ByCriteriaResponse"/>
+
+<xs:complexType name="bioData">
+<xs:sequence>
+	<xs:element name="IDCODE" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="bioDataResponse">
+<xs:sequence>
+	<xs:element name="return" type="tns:curriculumMasterStructure" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="curriculumMasterStructure">
+<xs:sequence>
+	<xs:element name="EMP_ID" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_TITLE_TH2" type="xs:string" minOccurs="0"/>
+	<xs:element name="PERSON_ID" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_BANK_ACC_ID" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_TITLE_TH" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_TITLE_EN" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_FNAME_TH" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_LNAME_TH" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_FNAME_EN" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_LNAME_EN" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_MNAME_EN" type="xs:string" minOccurs="0"/>
+	<xs:element name="CWK_MUA_VPOS" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_NATION2" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_NATION1" type="xs:string" minOccurs="0"/>
+	<xs:element name="CWK_MUA_MAIN" type="xs:string" minOccurs="0"/>
+	<xs:element name="CWK_MUA_SUBMAIN" type="xs:string" minOccurs="0"/>
+	<xs:element name="CWK_MUA_MAIN_NAME" type="xs:string" minOccurs="0"/>
+	<xs:element name="CWK_MUA_SUBMAIN_NAME" type="xs:string" minOccurs="0"/>
+	<xs:element name="CWK_DSU_EDU_CENTER" type="xs:string" minOccurs="0"/>
+	<xs:element name="CWK_DSU_EDU_CENTER_NAME" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_MOBILE_1" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_MOBILE_2" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_EMAIL1" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_EMAIL2" type="xs:string" minOccurs="0"/>
+	<xs:element name="CWK_STATUS_NAME" type="xs:string" minOccurs="0"/>
+	<xs:element name="EDU" type="tns:EDU" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="EDU">
+<xs:sequence>
+	<xs:element name="EDU_DATA" type="tns:EDU_DATA" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="EDU_DATA">
+<xs:sequence>
+	<xs:element name="EMP_ID" type="xs:string" minOccurs="0"/>
+	<xs:element name="EDU_ID" type="xs:string" minOccurs="0"/>
+	<xs:element name="EDU_LEVEL" type="xs:string" minOccurs="0"/>
+	<xs:element name="EDU_NAME" type="xs:string" minOccurs="0"/>
+	<xs:element name="EDU_NAME_SHORT" type="xs:string" minOccurs="0"/>
+	<xs:element name="EDU_GPA" type="xs:string" minOccurs="0"/>
+	<xs:element name="EDU_PROGRAM" type="xs:string" minOccurs="0"/>
+	<xs:element name="EDU_YEAR" type="xs:string" minOccurs="0"/>
+	<xs:element name="EDU_MAJOR" type="xs:string" minOccurs="0"/>
+	<xs:element name="EDU_DISCIPLINE" type="xs:string" minOccurs="0"/>
+	<xs:element name="EDU_FROM" type="xs:string" minOccurs="0"/>
+	<xs:element name="EDU_COUNTRY" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+
+<xs:complexType name="ByCriteria">
+<xs:sequence>
+	<xs:element name="IDCODE" type="xs:string"/>
+	<xs:element name="EMP_ID" type="xs:string"/>
+	<xs:element name="PERSON_ID" type="xs:string"/>
+	<xs:element name="ACC_ID" type="xs:string"/>
+	<xs:element name="FNAME_TH" type="xs:string"/>
+	<xs:element name="LNAME_TH" type="xs:string"/>
+	<xs:element name="FNAME_EN" type="xs:string"/>
+	<xs:element name="LNAME_EN" type="xs:string"/>
+	<xs:element name="PERSON_TYPE" type="xs:string"/>
+	<xs:element name="CWK_MUA_MAIN" type="xs:string"/>
+	<xs:element name="CWK_MUA_SUBMAIN" type="xs:string"/>
+	<xs:element name="CWK_DSU_EDU_CENTER" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+
+
+
+<xs:complexType name="ByCriteriaResponse">
+<xs:sequence>
+	<xs:element name="return" type="tns:PERSON" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+
+<xs:complexType name="PERSON">
+<xs:sequence>
+	<xs:element name="EMP_ID" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_TITLE_TH2" type="xs:string" minOccurs="0"/>
+	<xs:element name="PERSON_ID" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_BANK_ACC_ID" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_TITLE_TH" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_TITLE_EN" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_FNAME_TH" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_LNAME_TH" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_FNAME_EN" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_LNAME_EN" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_MNAME_EN" type="xs:string" minOccurs="0"/>
+	<xs:element name="CWK_MUA_VPOS" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_NATION2" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_NATION1" type="xs:string" minOccurs="0"/>
+	<xs:element name="CWK_MUA_MAIN" type="xs:string" minOccurs="0"/>
+	<xs:element name="CWK_MUA_SUBMAIN" type="xs:string" minOccurs="0"/>
+	<xs:element name="CWK_DSU_EDU_CENTER" type="xs:string" minOccurs="0"/>
+	<xs:element name="CWK_DSU_EDU_CENTER_NAME" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_MOBILE_1" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_MOBILE_2" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_EMAIL1" type="xs:string" minOccurs="0"/>
+	<xs:element name="BIO_EMAIL2" type="xs:string" minOccurs="0"/>
+	<xs:element name="CWK_STATUS_NAME" type="xs:string" minOccurs="0"/>
+	<xs:element name="EDU" type="tns:EDU" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Exception">
+<xs:sequence>
+	<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,42 @@
+<?xml version ='1.0' encoding ='UTF-8' ?>
+<definitions name='UsraddData' targetNamespace='http://example.org/catalog'
+  xmlns:tns=' http://example.org/catalog '
+  xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/'
+  xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+  xmlns:soapenc='http://schemas.xmlsoap.org/soap/encoding/'
+  xmlns:wsdl='http://schemas.xmlsoap.org/wsdl/'
+  xmlns='http://schemas.xmlsoap.org/wsdl/'>
+
+  <message name='usraddRequest'>
+    <part name='perId' type='xsd:string'/>
+  </message>
+  <message name='usraddResponse'>
+    <part name='Result' type='xsd:string'/>
+  </message>
+
+  <portType name='UsraddPortType'>
+    <operation name='usradd'>
+      <input message='tns:usraddRequest'/>
+      <output message='tns:usraddResponse'/>
+    </operation>
+  </portType>
+
+  <binding name='UsraddBinding' type='tns:UsraddPortType'>
+    <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+    <operation name='usradd'>
+      <soap:operation soapAction='http://dany-pc-catalog#usradd'/>
+      <input>
+        <soap:body use='encoded' namespace='http://dany-pc-catalog' encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+      </input>
+      <output>
+        <soap:body use='encoded' namespace='http://dany-pc-catalog' encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+      </output>
+    </operation>
+  </binding>
+
+  <service name='UsraddService'>
+    <port name='UsraddPort' binding='UsraddBinding'>
+      <soap:address location='http://personnel.dusit.ac.th/eprofile/webservices/address_service.php'/>
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,42 @@
+<?xml version ='1.0' encoding ='UTF-8' ?>
+<definitions name='ExpPositionData' targetNamespace='http://example.org/catalog'
+  xmlns:tns=' http://example.org/catalog '
+  xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/'
+  xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+  xmlns:soapenc='http://schemas.xmlsoap.org/soap/encoding/'
+  xmlns:wsdl='http://schemas.xmlsoap.org/wsdl/'
+  xmlns='http://schemas.xmlsoap.org/wsdl/'>
+
+  <message name='exp_positionRequest'>
+    <part name='perId' type='xsd:string'/>
+  </message>
+  <message name='exp_positionResponse'>
+    <part name='Result' type='xsd:string'/>
+  </message>
+
+  <portType name='Exp_positionPortType'>
+    <operation name='exp_position'>
+      <input message='tns:exp_positionRequest'/>
+      <output message='tns:exp_positionResponse'/>
+    </operation>
+  </portType>
+
+  <binding name='Exp_positionBinding' type='tns:Exp_positionPortType'>
+    <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+    <operation name='exp_position'>
+      <soap:operation soapAction='http://dany-pc-catalog#exp_position'/>
+      <input>
+        <soap:body use='encoded' namespace='http://dany-pc-catalog' encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+      </input>
+      <output>
+        <soap:body use='encoded' namespace='http://dany-pc-catalog' encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+      </output>
+    </operation>
+  </binding>
+
+  <service name='Exp_positionService'>
+    <port name='Exp_positionPort' binding='Exp_positionBinding'>
+      <soap:address location='http://personnel.dusit.ac.th/eprofile/webservices/exp_position_service.php'/>
+    </port>
+  </service>
+</definitions>

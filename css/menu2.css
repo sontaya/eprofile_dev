@@ -1,0 +1,133 @@
+@charset "utf-8";
+/* CSS Document */
+div#menu{
+ border:0;	
+}
+
+ul,li {
+	display: block;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+ul {
+	width: 150px;
+	background: #FFF;
+	list-style-type: none;
+	text-align:left;
+}
+
+li {
+	position: relative;
+	padding: 0px;
+	z-index: 9;
+}
+
+li.folder	{
+	font: normal 12px/16px Verdana, Arial, Tahoma, Sans-Serif, Helvetica;
+	padding: 3px 0 5px 16px;
+	/*background-color: #EFEFEF;*/
+	background-color: #999;
+	border-top: 1px solid #FFFFFF;
+	border-bottom: 1px solid #CCCCCC;
+}	
+
+li.folder:hover {
+	z-index: 10;
+	/*background-color: #EFEFEF;*/
+	/*background-color: #D187D2;*/
+	font: normal 12px/16px Verdana, Arial, Tahoma, Sans-Serif, Helvetica;
+	padding-left: 13px;
+	color:#FFF;
+	background-image:url(../images/bullets1.png);
+	background-repeat:no-repeat;
+	background-position:left;
+}
+
+	
+
+li.folder ul {
+	position: absolute;
+	display: none;
+	left: 130px; /* IE */
+	top: 5px;
+}
+				
+li.folder>ul { 
+	left: 130px;
+}
+		
+ul.level1 li.folder:hover ul.level2 {
+	display: block;
+	width: 200px;
+	
+}
+
+a {
+	padding: 2px;
+	text-decoration: none;
+	width: 100%; /* IE */
+	color:#FFF;
+	cursor:pointer;
+}
+
+li>a { 
+	width: auto;
+}
+
+li a.submenu {
+	background-color: #EEE;
+	font: normal 12px/16px Verdana, Arial, Tahoma, Sans-Serif, Helvetica;
+	display: block;
+	border-bottom: 1px solid #FFF;
+/*	padding-top: 3px;
+	padding-bottom: 4px;
+		padding-left: 10px;*/
+	padding: 3px 0 5px 16px;
+	color:#666;
+	
+}
+
+li a.submenu:hover {
+	background-color: #DCEAF9;
+}
+			
+li.explain { 
+	font: bold 12px Verdana, Arial, Tahoma, Sans-Serif, Helvetica;
+	background-color: #DCEAF9;
+	border-bottom: 1px solid #FFFFFF;
+	color: #6699CC;
+	padding-left: 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	width: 190px;	
+}
+
+/* Hide from IE5-mac. Only IE-win sees this. \*/
+* html li.explain { 
+	width: 202px;
+}
+/* End hide from IE5/mac */
+
+/*a:link, a:visited {
+	color: #FFF;	
+}*/
+
+/*a:hover {
+	color: #000;	
+}*/
+
+#menu {
+    border: 1px solid #ccc;
+    margin: 0;
+    padding: 0;
+    width: 150px;
+}
+
+#link {
+    font: 12px Verdana, Arial, Tahoma, Sans-Serif, Helvetica;
+	padding: 0px 0px 0px 20px;
+	margin-top: 15px;
+}
+

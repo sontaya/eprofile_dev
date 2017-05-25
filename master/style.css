@@ -1,0 +1,52 @@
+body {
+  font-family:Verdana, Geneva, sans-serif;
+  font-size: 13px;
+}
+
+#fEdit {
+  font-size: small;
+}
+#e_position {
+  border: 1px solid #999;
+  width: 300px;
+  margin-top: 2px;
+}
+#e_code {
+  border: 1px solid #999;
+  width: 30px;
+  margin-top: 2px;
+}
+.ui-widget-overlay {
+
+  opacity: 0.5;
+}
+
+body,td,th {
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 12px;
+}
+
+.all_table td,th,table{
+  border: 1px #cccccc  solid ;
+  border-collapse: collapse;
+}
+
+.all_table tr:hover{
+  background-color: #ece7e7;
+}
+
+.all_table th{
+  text-align: center;
+  background-color:#9355ac;
+  color: #ece7e7;
+}
+
+.all_table td{
+  padding-left: 4px;
+}
+
+
+
+#mainContainer{
+  padding-left: 40px;
+}

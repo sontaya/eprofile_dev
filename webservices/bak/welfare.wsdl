@@ -1,0 +1,42 @@
+<?xml version ='1.0' encoding ='UTF-8' ?>
+<definitions name='Welfare' targetNamespace='http://example.org/catalog'
+  xmlns:tns=' http://example.org/catalog '
+  xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/'
+  xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+  xmlns:soapenc='http://schemas.xmlsoap.org/soap/encoding/'
+  xmlns:wsdl='http://schemas.xmlsoap.org/wsdl/'
+  xmlns='http://schemas.xmlsoap.org/wsdl/'>
+
+  <message name='getWelfareRequest'>
+    <part name='empId' type='xsd:string'/>
+  </message>
+  <message name='getWelfareResponse'>
+    <part name='Result' type='xsd:string'/>
+  </message>
+
+  <portType name='WelfarePortType'>
+    <operation name='getWelfareEntry'>
+      <input message='tns:getWelfareRequest'/>
+      <output message='tns:getWelfareResponse'/>
+    </operation>
+  </portType>
+
+  <binding name='WelfareBinding' type='tns:WelfarePortType'>
+    <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+    <operation name='getWelfareEntry'>
+      <soap:operation soapAction='http://dany-pc-catalog#getWelfareEntry'/>
+      <input>
+        <soap:body use='encoded' namespace='http://dany-pc-catalog' encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+      </input>
+      <output>
+        <soap:body use='encoded' namespace='http://dany-pc-catalog' encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+      </output>
+    </operation>
+  </binding>
+
+  <service name='WelfareService'>
+    <port name='WelfarePort' binding='WelfareBinding'>
+      <soap:address location='http://personnel.dusit.ac.th/eprofile/webservices/welfare_service.php'/>
+    </port>
+  </service>
+</definitions>

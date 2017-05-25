@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.head2 {
+	width: 200px;
+	height:20px;
+	background-color:#D187D2;
+	font-size:14px;
+	color:#FFF;
+	text-align: center;
+	
+}
+
+.form_text{
+	font-size:13px;
+	height: 12px;
+}
+
+.input_text{
+	border-bottom:thin;
+	border-left:thin;
+	border-right:thin;
+	border-top:thin;
+	border: 1px solid #999;
+	height: 16px;
+}
+
+.input_login{
+	border-bottom:thin;
+	border-left:thin;
+	border-right:thin;
+	border-top:thin;
+	height: 20px;
+	font-size:18px;
+}
+
+.input_text:focus{
+	background-color:#F2F2F2;
+}
+
+.file_upload{
+	height: 21px;	
+}
+
+textarea{
+	width: 400px;
+	height: 100px;
+	border-bottom:thin;
+	border-left:thin;
+	border-right:thin;
+	border-top:thin;
+	border: 1px solid #999;
+}
+
+textarea:focus{
+	background-color:#F2F2F2;
+}
+
+.text_th{
+
+	background-color:#c5a3c7;
+	border: 2px solid #E3F0F9;
+	height:21px;
+	color:#60145a;
+}
+
+.text_tr{
+	font:normal;
+	font-size: 13px;
+}
+
+.text_td{
+	font-size: 12px;
+	background-color:#FFFFFF;
+}
+
+.text_data{
+	padding-left: 7px;
+}
+
+.data_details_list{
+	padding-left:13px; 
+	padding-right:10px;
+}
+
+.widthFix{
+	width:90px;
+}
+
+.widthFix2{
+	width:140px;
+}
+

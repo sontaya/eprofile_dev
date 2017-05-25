@@ -1,0 +1,42 @@
+<?xml version ='1.0' encoding ='UTF-8' ?>
+<definitions name='Salaryall' targetNamespace='http://example.org/catalog'
+  xmlns:tns=' http://example.org/catalog '
+  xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/'
+  xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+  xmlns:soapenc='http://schemas.xmlsoap.org/soap/encoding/'
+  xmlns:wsdl='http://schemas.xmlsoap.org/wsdl/'
+  xmlns='http://schemas.xmlsoap.org/wsdl/'>
+
+  <message name='getSalaryallRequest'>
+    <part name='empId' type='xsd:string'/>
+  </message>
+  <message name='getSalaryallResponse'>
+    <part name='Result' type='xsd:string'/>
+  </message>
+
+  <portType name='SalaryallPortType'>
+    <operation name='getSalaryallEntry'>
+      <input message='tns:getSalaryallRequest'/>
+      <output message='tns:getSalaryallResponse'/>
+    </operation>
+  </portType>
+
+  <binding name='SalaryallBinding' type='tns:SalaryallPortType'>
+    <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+    <operation name='getSalaryallEntry'>
+      <soap:operation soapAction='http://dany-pc-catalog#getSalaryallEntry'/>
+      <input>
+        <soap:body use='encoded' namespace='http://dany-pc-catalog' encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+      </input>
+      <output>
+        <soap:body use='encoded' namespace='http://dany-pc-catalog' encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+      </output>
+    </operation>
+  </binding>
+
+  <service name='SalaryallService'>
+    <port name='SalaryallPort' binding='SalaryallBinding'>
+      <soap:address location='http://personnel.dusit.ac.th/eprofile/webservices/salary_service.php'/>
+    </port>
+  </service>
+</definitions>

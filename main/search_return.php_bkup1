@@ -1,0 +1,168 @@
+<?php
+@session_start();
+$fpath = '../';
+require_once($fpath."includes/connect.php");
+
+// Query Admin position
+$sql = "SELECT CWK_MUA_MPOS,CWK_MUA_MAIN, CWK_MUA_SUBMAIN FROM CURRENT_WORK_TAB ";
+$sql .= "WHERE EMP_ID = '{$_SESSION['USER_EMP_ID']}' ";
+$sst = oci_parse($conn,$sql);
+oci_execute($sst);
+$rc = oci_fetch_array($sst);
+/*
+echo "<pre>";
+echo "\$sql = {$sql}<br />";
+print_r($rc);
+echo "</pre>";
+*/
+$add_sql = " CURRENT_WORK_TAB.EMP_ID = BIODATA_TAB.EMP_ID ";
+$add_sql2 = " CURRENT_WORK_TAB.EMP_ID = NAME_HISTORY.EMP_ID ";
+
+if($rc['CWK_MUA_MPOS'] == '03' || $rc['CWK_MUA_MPOS'] == '06' || $rc['CWK_MUA_MPOS'] == '07' || $rc['CWK_MUA_MPOS'] == '04') {
+	// ผู้บริหารระดับ คณบดี / รองคณบดี / ผู้อำนวยการ
+	
+	$add_sql = "  CURRENT_WORK_TAB.CWK_MUA_MAIN = '{$rc['CWK_MUA_MAIN']}'  ";
+	$add_sql2 = "   CURRENT_WORK_TAB.CWK_MUA_MAIN = '{$rc['CWK_MUA_MAIN']}'  ";
+	
+	if($$rc['CWK_MUA_MPOS'] == '04') {
+		$add_sql .= "  AND CURRENT_WORK_TAB.CWK_MUA_SUBMAIN = '{$rc['CWK_MUA_SUBMAIN']}' ";
+		$add_sql2 .= " AND CURRENT_WORK_TAB.CWK_MUA_SUBMAIN = '{$rc['CWK_MUA_SUBMAIN']}' ";
+	}
+} // End if
+$name = trim($_POST["name"]);
+$mname = trim($_POST["mname"]);
+$lastname = trim($_POST["lastname"]);
+$emp_id = trim($_POST["emp_id"]);
+$person_id = trim($_POST["person_id"]);
+$emp_type = trim($_POST['emp_type']);
+if($name != ""){
+	$where[] = " BIODATA_TAB.BIO_FNAME_TH LIKE '%$name%'  "; 
+	$where2[] = "  NAME_HISTORY.NAME LIKE '%$name%'  "; 
+}
+if($lastname != ""){
+	$where[] = " BIODATA_TAB.BIO_LNAME_TH LIKE '%$lastname%' "; 
+	$where2[] = "  NAME_HISTORY.LAST_NAME LIKE '%$lastname%'   "; 
+}
+if($emp_id != ""){
+	$where[] = " BIODATA_TAB.EMP_ID LIKE '%$emp_id%' "; 
+}
+if($person_id != ""){
+	$where[] = " BIODATA_TAB.PERSON_ID LIKE '%$person_id%' "; 
+}
+
+$where[] = $add_sql;
+$where2[] = $add_sql2;
+
+	$where_size = count($where);
+	$where_size2 = count($where2);
+	$q_where = "";
+	$q_where2 = "";
+	for ($i = 0;$i < $where_size; $i++){
+			$q_where .= "$where[$i] AND ";
+			
+			if($where_size == ($i+1)){
+				$q_where = substr($q_where,0,-4); // remove the last " OR AND";
+			}
+	}
+	
+	for ($i = 0;$i < $where_size2; $i++){
+			$q_where2 .= "$where2[$i] AND ";
+			
+			if($where_size2 == ($i+1)){
+				$q_where2 = substr($q_where2,0,-4); // remove the last " OR AND";
+			}
+	}
+
+$q_where .= " AND CURRENT_WORK_TAB.CWK_MUA_EMP_TYPE LIKE '%{$emp_type}%' ";
+$q_where2 .= " AND CURRENT_WORK_TAB.CWK_MUA_EMP_TYPE LIKE '%{$emp_type}%' ";
+echo "<p>{$q_where}<br />{$q_where2}</p>"	;
+
+$n = 0;
+$num = 0;
+$dont_find_old_name = 0;
+
+$num = $db->count_row("BIODATA_TAB, CURRENT_WORK_TAB "," WHERE $q_where  ",$conn); 
+
+if($emp_id != "" or $person_id !=""){
+	$dont_find_old_name = 1;
+}
+
+if($dont_find_old_name == 0 and $num == 0){
+$check_row = $db->count_row("BIODATA_TAB, NAME_HISTORY "," WHERE $q_where2  ",$conn); 
+
+	if($check_row > 0){
+		$sql = "SELECT BIODATA_TAB.*,NAME_HISTORY.* FROM BIODATA_TAB, NAME_HISTORY WHERE $q_where2  ";
+		echo "1 : " .$sql;
+		$stid = oci_parse($conn, $sql );
+		oci_execute($stid);
+	?>
+	<!--<link rel="stylesheet" type="text/css" href="../css/main1.css" />
+	<link rel="stylesheet" type="text/css" href="../css/form.css" />-->
+	<table width="716"  border="0" align="center"  bgcolor="#e9e9e9" >
+	  <tr align="center" class="text_th">
+		<td width="52" class="text_tr">ลำดับ</td>
+		<td width="220" class="text_tr">ชื่อ - นามสกุล</td>
+		<td width="209" class="text_tr">เลขประจำตัวประชาชน </td>
+		<td width="51" class="text_tr">แก้ไข</td>
+	  </tr>
+	<?
+	while (($row = oci_fetch_array($stid, OCI_BOTH))) {
+	++$n;
+	?>
+	<tr align="center" height="22" valign="top">
+	<td align="center" class="text_td"><?=$n?></td>
+	<td align="left" class="text_td text_data"><?=$row["NAME"]?> <?=$row["LAST_NAME"]?> (ชื่อเดิม)</td>
+	<td align="center" class="text_td"><?=$row["EMP_ID"]?></td>
+	<td align="center" class="text_td"><img src="../images/b_edit.png" height="15" border="0" style="cursor:pointer" title="Edit" alt="Edit" onclick="edit_('<?=$row["EMP_ID"]?>');"/></td>
+	</tr>
+	<?
+	}
+	}
+	else echo "budd: 0";
+
+}else{
+
+$check_row = $db->count_row("BIODATA_TAB, CURRENT_WORK_TAB "," WHERE $q_where  ",$conn); 
+ if($check_row > 0){
+$sql = "SELECT BIODATA_TAB.*,CURRENT_WORK_TAB.EMP_ID FROM BIODATA_TAB,CURRENT_WORK_TAB WHERE $q_where  ";
+echo "2 : " .$sql;
+$stid = oci_parse($conn, $sql );
+oci_execute($stid);
+?>
+<!--<link rel="stylesheet" type="text/css" href="../css/main1.css" />
+<link rel="stylesheet" type="text/css" href="../css/form.css" />-->
+<table width="716"  border="0" align="center"  bgcolor="#e9e9e9" >
+  <tr align="center" class="text_th">
+    <td width="52" class="text_tr">ลำดับ</td>
+    <td width="220" class="text_tr">ชื่อ - นามสกุล</td>
+    <td width="166" class="text_tr">เลขบัตรบุคลากร </td>
+    <td width="209" class="text_tr">เลขประจำตัวประชาชน </td>
+    <td width="51" class="text_tr">แก้ไข</td>
+  </tr>
+<?
+while (($row = oci_fetch_array($stid, OCI_BOTH))) {
+++$n;
+
+?>
+<tr align="center" height="22" valign="top">
+<td align="center" class="text_td"><?=$n?></td>
+<td align="left" class="text_td text_data"><?=$row["BIO_FNAME_TH"]?>  <?=$row["BIO_MNAME_TH"]?> <?=$row["BIO_LNAME_TH"]?></td>
+<td align="center" class="text_td"><?=$row["EMP_ID"]?></td>
+<td align="center" class="text_td"><?=$row["PERSON_ID"]?></td>
+<td align="center" class="text_td"><img src="../images/b_edit.png" height="15" border="0" style="cursor:pointer" title="Edit" alt="Edit" onclick="edit_('<?=$row["EMP_ID"]?>');"/></td>
+</tr>
+<?
+}
+ }else echo 0;
+ if($check_row > 0){
+?>
+ 
+    </table>
+
+<? 
+ }
+}
+
+
+$db->closedb($conn);	
+?>

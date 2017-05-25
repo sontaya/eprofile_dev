@@ -1,0 +1,42 @@
+<?xml version ='1.0' encoding ='UTF-8' ?>
+<definitions name='SupPositionData' targetNamespace='http://example.org/catalog'
+  xmlns:tns=' http://example.org/catalog '
+  xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/'
+  xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+  xmlns:soapenc='http://schemas.xmlsoap.org/soap/encoding/'
+  xmlns:wsdl='http://schemas.xmlsoap.org/wsdl/'
+  xmlns='http://schemas.xmlsoap.org/wsdl/'>
+
+  <message name='sup_positionRequest'>
+    <part name='perId' type='xsd:string'/>
+  </message>
+  <message name='sup_positionResponse'>
+    <part name='Result' type='xsd:string'/>
+  </message>
+
+  <portType name='Sup_positionPortType'>
+    <operation name='sup_position'>
+      <input message='tns:sup_positionRequest'/>
+      <output message='tns:sup_positionResponse'/>
+    </operation>
+  </portType>
+
+  <binding name='Sup_positionBinding' type='tns:Sup_positionPortType'>
+    <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+    <operation name='sup_position'>
+      <soap:operation soapAction='http://dany-pc-catalog#sup_position'/>
+      <input>
+        <soap:body use='encoded' namespace='http://dany-pc-catalog' encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+      </input>
+      <output>
+        <soap:body use='encoded' namespace='http://dany-pc-catalog' encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+      </output>
+    </operation>
+  </binding>
+
+  <service name='Sup_positionService'>
+    <port name='Sup_positionPort' binding='Sup_positionBinding'>
+      <soap:address location='http://personnel.dusit.ac.th/eprofile/webservices/sup_position_service.php'/>
+    </port>
+  </service>
+</definitions>

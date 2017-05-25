@@ -1,0 +1,56 @@
+.urbangreymenu{
+width: 190px; /*width of menu*/
+}
+
+.urbangreymenu .headerbar{
+font:  bold 13px Tahoma;
+color: white;
+background:  url(../images/menu/bgmenu.png) ; /*last 2 values are the x and y coordinates of bullet image*/
+margin-bottom: 0; /*bottom spacing between header and rest of content*/
+text-transform: uppercase;
+padding: 6px 0 6px 11px; /*31px is left indentation of header text*/
+}
+
+.urbangreymenu .headerbar a{
+text-decoration: none;
+color: white;
+display: block;
+}
+
+.urbangreymenu ul{
+list-style-type: none;
+margin: 0;
+padding: 0;
+margin-bottom: 0; /*bottom spacing between each UL and rest of content*/
+border-left: 8px #fff solid;
+border-right: 8px #fff solid;
+}
+
+.urbangreymenu ul li{
+padding-bottom: 2px; /*bottom spacing between menu items*/
+}
+
+.urbangreymenu ul li a{
+font: normal 12px Tahoma;
+color: #333;
+background: #ebcbe1;
+display: block;
+padding: 5px 0;
+line-height: 15px;
+padding-left: 7px; /*link text is indented 8px*/
+text-decoration: none;
+cursor:pointer;
+}
+
+.urbangreymenu ul li a:visited{
+color: black;
+}
+
+.urbangreymenu ul li a:hover{ /*hover state CSS*/
+color: #033;
+/*background: #d5aec9;*/
+font-weight: bold;
+/*border-left: 5px  #F9F solid;
+border-right: 5px #F9F solid;*/
+padding-left: 9px;
+}

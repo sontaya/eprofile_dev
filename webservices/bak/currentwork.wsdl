@@ -1,0 +1,42 @@
+<?xml version ='1.0' encoding ='UTF-8' ?>
+<definitions name='Currentwork' targetNamespace='http://example.org/catalog'
+  xmlns:tns=' http://example.org/catalog '
+  xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/'
+  xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+  xmlns:soapenc='http://schemas.xmlsoap.org/soap/encoding/'
+  xmlns:wsdl='http://schemas.xmlsoap.org/wsdl/'
+  xmlns='http://schemas.xmlsoap.org/wsdl/'>
+
+  <message name='getCurrentworkRequest'>
+    <part name='perId' type='xsd:string'/>
+  </message>
+  <message name='getCurrentworkResponse'>
+    <part name='Result' type='xsd:string'/>
+  </message>
+
+  <portType name='CurrentworkPortType'>
+    <operation name='getCurrentworkEntry'>
+      <input message='tns:getCurrentworkRequest'/>
+      <output message='tns:getCurrentworkResponse'/>
+    </operation>
+  </portType>
+
+  <binding name='CurrentworkBinding' type='tns:CurrentworkPortType'>
+    <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+    <operation name='getCurrentworkEntry'>
+      <soap:operation soapAction='http://dany-pc-catalog#getCurrentworkEntry'/>
+      <input>
+        <soap:body use='encoded' namespace='http://dany-pc-catalog' encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+      </input>
+      <output>
+        <soap:body use='encoded' namespace='http://dany-pc-catalog' encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+      </output>
+    </operation>
+  </binding>
+
+  <service name='CurrentworkService'>
+    <port name='CurrentworkPort' binding='CurrentworkBinding'>
+      <soap:address location='http://personnel.dusit.ac.th/eprofile/webservices/currentwork_service.php'/>
+    </port>
+  </service>
+</definitions>
