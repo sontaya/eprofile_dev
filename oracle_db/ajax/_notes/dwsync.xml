@@ -5,4 +5,9 @@
 <file name="ajax_drop_primary_key.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676961082226" remote="131111748000000000" Dst="0" />
 <file name="ajax_row_duplicates.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676961192516" remote="131111748000000000" Dst="0" />
 <file name="ajax_add_index.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676960811512" remote="131111748000000000" Dst="0" />
+<file name="ajax_add_index.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676960811512" remote="131405679000000000" Dst="0" />
+<file name="ajax_add_primary_key.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676960871666" remote="131405679000000000" Dst="0" />
+<file name="ajax_drop_index.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676961022066" remote="131405679000000000" Dst="0" />
+<file name="ajax_drop_primary_key.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676961082226" remote="131405679000000000" Dst="0" />
+<file name="ajax_row_duplicates.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676961192516" remote="131405679000000000" Dst="0" />
 </dwsync>

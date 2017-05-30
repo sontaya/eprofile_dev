@@ -1,122 +1,106 @@
 <?php
-@session_start();
-error_reporting(E_ALL);
+	@session_start();
+	error_reporting(E_ALL);
 
-if(!$_SESSION or $_SESSION["EMP_ID"] == "") {
+	if(!$_SESSION or $_SESSION["EMP_ID"] == "") {
 ?>
-<script language="javascript">
-window.location = "../" ;
-</script>
-<? }
-
-ini_set('max_execution_time', 300);
-
-$fpath = '../';
-require_once($fpath."includes/connect.php");
-include "update_by.php";
-////////////////////
-/* $sql_ref_department = "SELECT * FROM  ".TB_CURRENT_WORK_TAB."";
-	$stid_ref_department = oci_parse($conn, $sql_ref_department);
-	oci_execute($stid_ref_department);
-	$a=0;
-	while($row_ref_department = oci_fetch_array($stid_ref_department, OCI_BOTH)){$a++;
-	echo $ss=$row_ref_department["EMP_ID"];
-		$result=$db->update_db(TB_CURRENT_WORK_TAB,array(
-											  "CWK_POS_STATUS"=>"2",
-											  "CK_ID"=>"$a"
-									 ),"EMP_ID = '$ss'",$conn);
-	}*/
-	//$option_ref_department .= "<option value='other' $select>อื่นๆ</option>\n";
-
-/////////////////////
-//echo $_SESSION["EMP_ID"];
-$sql = "SELECT * FROM  ".TB_CURRENT_WORK_TAB."  WHERE  EMP_ID = '".$_SESSION["EMP_ID"]."'";
-//echo $sql;
-$row = $db->fetch($sql,$conn);
-@list($cwk_start_work_hour,$cwk_start_work_min) = @explode(":",$row["CWK_START_WORK"]);
-@list($cwk_end_work_hour,$cwk_end_work_min) = @explode(":",$row["CWK_END_WORK"]);
-@list($cwk_salary_bath,$cwk_salary_stang) = @explode(".",$row["CWK_SALARY"]);
-$sql_salary = "SELECT * FROM ".TB_REF_SALARY_STEP." WHERE EMP_ID = '".$_SESSION["EMP_ID"]."' ORDER BY REF DESC";
-$stid_salary = oci_parse($conn, $sql_salary );
-oci_execute($stid_salary);
-$row_salary = oci_fetch_array($stid_salary, OCI_BOTH);
-$salary = $row_salary["SALARY1"]+$row_salary["SALARY2"]+$row_salary["SALARY3"];
-
-$sql_budget = "SELECT * FROM  ".TB_REF_SALARY_SOURCE."  ORDER BY CODE_SALARY_SOURCE ASC ";
-$stid_budget = oci_parse($conn, $sql_budget );
-oci_execute($stid_budget);
-
-$option = array();
-for($i=1;$i<11;$i++){
-	if($i>3){
-	$option[$i]="<option value=''>เลือก</option>";
+		<script language="javascript">
+		window.location = "../" ;
+		</script>
+<? 
 	}
-}
-while(($row_budget = oci_fetch_array($stid_budget, OCI_BOTH))){
-	for($i=1;$i<4;$i++){
-		//if($row_salary["SOURCE{$i}"] == $row_budget["CODE_SALARY_SOURCE"]){
-		if(true){
-			if($row_salary["SOURCE{$i}"] == $row_budget["CODE_SALARY_SOURCE"]) {
-				$select="selected = 'selected'";
-			}
-			else {
-				$select ="";
-			}
-			$option[$i] .= "<option value='".$row_budget["CODE_SALARY_SOURCE"]."' $select>".$row_budget["NAME_SALARY_SOURCE"]."</option>";
-			}
+
+	ini_set('max_execution_time', 300);
+
+	$fpath = '../';
+	require_once($fpath."includes/connect.php");
+	include "update_by.php";
+
+	//echo $_SESSION["EMP_ID"];
+	$sql = "SELECT * FROM  ".TB_CURRENT_WORK_TAB."  WHERE  EMP_ID = '".$_SESSION["EMP_ID"]."'";
+	echo $sql;
+	$row = $db->fetch($sql,$conn);
+	@list($cwk_start_work_hour,$cwk_start_work_min) = @explode(":",$row["CWK_START_WORK"]);
+	@list($cwk_end_work_hour,$cwk_end_work_min) = @explode(":",$row["CWK_END_WORK"]);
+	@list($cwk_salary_bath,$cwk_salary_stang) = @explode(".",$row["CWK_SALARY"]);
+	$sql_salary = "SELECT * FROM ".TB_REF_SALARY_STEP." WHERE EMP_ID = '".$_SESSION["EMP_ID"]."' ORDER BY REF DESC";
+	$stid_salary = oci_parse($conn, $sql_salary );
+	oci_execute($stid_salary);
+	$row_salary = oci_fetch_array($stid_salary, OCI_BOTH);
+	$salary = $row_salary["SALARY1"]+$row_salary["SALARY2"]+$row_salary["SALARY3"];
+
+	$sql_budget = "SELECT * FROM  ".TB_REF_SALARY_SOURCE."  ORDER BY CODE_SALARY_SOURCE ASC ";
+	$stid_budget = oci_parse($conn, $sql_budget );
+	oci_execute($stid_budget);
+
+	$option = array();
+	for($i=1;$i<11;$i++){
+		if($i>3){
+			$option[$i]="<option value=''>เลือก</option>";
 		}
-	for($i=4;$i<11;$i++){
-		$j = $i - 3;
-		if($row["CWK_FROM{$j}"] == $row_budget["CODE_SALARY_SOURCE"]){ $select="selected = 'selected'";}else{ $select="";}
-		$option[$i] .= "<option value='".$row_budget["CODE_SALARY_SOURCE"]."' $select>".$row_budget["NAME_SALARY_SOURCE"]."</option>";
-
 	}
-}
+	while(($row_budget = oci_fetch_array($stid_budget, OCI_BOTH))){
+		for($i=1;$i<4;$i++){
+			//if($row_salary["SOURCE{$i}"] == $row_budget["CODE_SALARY_SOURCE"]){
+			if(true){
+				if($row_salary["SOURCE{$i}"] == $row_budget["CODE_SALARY_SOURCE"]) {
+					$select="selected = 'selected'";
+				}
+				else {
+					$select ="";
+				}
+				$option[$i] .= "<option value='".$row_budget["CODE_SALARY_SOURCE"]."' $select>".$row_budget["NAME_SALARY_SOURCE"]."</option>";
+				}
+			}
+		for($i=4;$i<11;$i++){
+			$j = $i - 3;
+			if($row["CWK_FROM{$j}"] == $row_budget["CODE_SALARY_SOURCE"]){ $select="selected = 'selected'";}else{ $select="";}
+			$option[$i] .= "<option value='".$row_budget["CODE_SALARY_SOURCE"]."' $select>".$row_budget["NAME_SALARY_SOURCE"]."</option>";
 
-$sql_ex_salary = "SELECT * FROM  ".TB_REF_EXTRA_SALARY."  ORDER BY ID ASC ";
-$stid_ex_salary = oci_parse($conn, $sql_ex_salary );
-oci_execute($stid_ex_salary);
+		}
+	}
 
-$option_ex_salary = array();
-for($i=1;$i<8;$i++){
-	$option_ex_salary[$i]="<option value=''>เลือก</option>";
-}
-while(($row_ex_salary = oci_fetch_array($stid_ex_salary, OCI_BOTH))){
+	$sql_ex_salary = "SELECT * FROM  ".TB_REF_EXTRA_SALARY."  ORDER BY ID ASC ";
+	$stid_ex_salary = oci_parse($conn, $sql_ex_salary );
+	oci_execute($stid_ex_salary);
+
+	$option_ex_salary = array();
 	for($i=1;$i<8;$i++){
-		 if($row["CWK_EXTRA_SALARY{$i}"] == $row_ex_salary["ID"]){ $select="selected = 'selected'";}else{ $select="";}
-		$option_ex_salary[$i] .= "<option value='".$row_ex_salary["ID"]."' $select>".$row_ex_salary["NAME"]."</option>";
+		$option_ex_salary[$i]="<option value=''>เลือก</option>";
+	}
+	while(($row_ex_salary = oci_fetch_array($stid_ex_salary, OCI_BOTH))){
+		for($i=1;$i<8;$i++){
+			 if($row["CWK_EXTRA_SALARY{$i}"] == $row_ex_salary["ID"]){ $select="selected = 'selected'";}else{ $select="";}
+			$option_ex_salary[$i] .= "<option value='".$row_ex_salary["ID"]."' $select>".$row_ex_salary["NAME"]."</option>";
+		}
+
 	}
 
-}
+	function ex_admin_department(){
+		global $conn;
+		global $db;
 
-function ex_admin_department(){
-	global $conn;
-	global $db;
+		$sql="SELECT * FROM  SDU_ADMIN_DEPARTMENT WHERE EMP_ID='".$_SESSION["EMP_ID"]."'";
+		//print $sql;
+		$query = oci_parse($conn, $sql );
+		oci_execute($query);
+		while(($row = oci_fetch_array($query, OCI_BOTH))){
 
-	$sql="SELECT * FROM  SDU_ADMIN_DEPARTMENT WHERE EMP_ID='".$_SESSION["EMP_ID"]."'";
-	//print $sql;
-	$query = oci_parse($conn, $sql );
-	oci_execute($query);
-	while(($row = oci_fetch_array($query, OCI_BOTH))){
-		//$data_position[]=$row["POSITION"];
-		//$data_faculty[]=$row["CODE_FACULTY"];
-		//$data_department_section[]=$row["CODE_DEPARTMENT_SECTION"];
-		//print $row["POSITION"].":".$row["CODE_FACULTY"].":".$row["CODE_DEPARTMENT_SECTION"]."<br>";
-		$data["POSITION"][]=$row["POSITION"];
-		$data["CODE_FACULTY"][]=$row["CODE_FACULTY"];
-		$data["CODE_DEPARTMENT_SECTION"][]=$row["CODE_DEPARTMENT_SECTION"];
+			$data["POSITION"][]=$row["POSITION"];
+			$data["CODE_FACULTY"][]=$row["CODE_FACULTY"];
+			$data["CODE_DEPARTMENT_SECTION"][]=$row["CODE_DEPARTMENT_SECTION"];
+		}
+
+		$return[0]=$data_position;
+		$return[1]=$data_faculty;
+		$return[2]=$data_department_section;
+
+
+		return $data;
+
 	}
 
-	$return[0]=$data_position;
-	$return[1]=$data_faculty;
-	$return[2]=$data_department_section;
-
-
-	return $data;
-
-}
-
-$ex_admin_department=ex_admin_department();;
+	$ex_admin_department=ex_admin_department();
 ?>
 <script type="text/javascript" language="javascript">
 
@@ -325,19 +309,23 @@ function select_executives(data){
 <!-- current_work_data_save.php 
  <form id="current_work" name="current_work" enctype="multipart/form-data" method="post" action="current_work_data_save.php" target="upload_target">
 -->
-      <form id="current_work" name="current_work" enctype="multipart/form-data" method="post" action="current_work_data_save.php"  target="upload_target">
+<form id="current_work" name="current_work" enctype="multipart/form-data" method="post" action="current_work_data_save.php"  target="upload_target">
+
     <table  cellspacing="0" cellpadding="0" align="center" border="0">
         <tr>
-      
-        <td>
+        	<td>
 
         <table width="758" border="0" cellspacing="4" cellpadding="4">
-          <input type="hidden" id="current_work_id" name="current_work_id" value=""/>
-          <input type="hidden" id="ch_id" name="ch_id" value=""/>
-          <input type="hidden" id="cwk_id" name="cwk_id" value="<?=$row["CK_ID"]  ?>"/>
+
           <tr>
-            <td height="30" align="right" class="form_text">สถานะปัจจุบัน :</td>
-            <td align="left"><select  id="cwk_status" name="cwk_status" class="widthFix2" onchange="quit(this.value);">
+            <td height="30" align="right" class="form_text">
+				<input type="hidden" id="current_work_id" name="current_work_id" value=""/>
+				<input type="hidden" id="ch_id" name="ch_id" value=""/>
+				<input type="hidden" id="cwk_id" name="cwk_id" value="<?=$row["CK_ID"]  ?>"/>
+            	สถานะปัจจุบัน :
+            </td>
+            <td align="left">
+               <select  id="cwk_status" name="cwk_status" class="widthFix2" onchange="quit(this.value);">
                 <option value="01" <? if($row["CWK_STATUS"] == "01"){echo "selected='selected'";}?>>ปฏิบัติการ</option>
                 <option value="02" <? if($row["CWK_STATUS"] == "02"){echo "selected='selected'";}?>>ลาออก</option>
                 <option value="03" <? if($row["CWK_STATUS"] == "03"){echo "selected='selected'";}?>>ลาศึกษาต่อ</option>
@@ -345,40 +333,37 @@ function select_executives(data){
                 <option value="05" <? if($row["CWK_STATUS"] == "05"){echo "selected='selected'";}?>>ปฏิบัติการตามวาระ</option>
                 <option value="07" <? if($row["CWK_STATUS"] == "07"){echo "selected='selected'";}?>>เสียชีวิต</option>
                 <option value="08" <? if($row["CWK_STATUS"] == "08"){echo "selected='selected'";}?>>ไม่ใช้งานแล้ว</option>
-              </select></td>
+              </select>
+            </td>
           </tr>
           <tr >
-            <td colspan="2" align="left" class="form_text"  height="1"><?
-		$style="display:none";
-		if($row["CWK_STATUS"] == "02") $style="display:block";
-
-		?>
-              <div id="quit"  align="left" style="padding-left:145px;<?=$style?>"> &nbsp; วันที่ลาออก :
-                &nbsp;&nbsp;
-                <input type="text" id="cwk_quit_date" name="cwk_quit_date" class="input_text" style="width: 80px; " value="<?=change_date_thai($row["CWK_QUIT_DATE"])?>"/>
-                <img src="../images/vcalendar.png" align="absmiddle" onclick="showCalendar('cwk_quit_date','YYYY-MM-DD')"  style="cursor:pointer"/> <br />
-                เหตุผลที่ออก :
-                &nbsp;&nbsp;
-                <input type="text" id="cwk_quit_reason" name="cwk_quit_reason" class="input_text" style="width: 200px; " value="<?=$row["CWK_QUIT_REASON"]?>"/><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="checkbox" id="cwk_resignation" name="cwk_resignation" value="Y" /><input type="text" id="cwk_resignation_detail" name="cwk_resignation_detail" class="input_text" style="width: 200px; " value="<?=$row["CWK_RESIGNATION_DETAIL"]?>"/>
-                <input type="file" id="cwk_resignation_file" name="cwk_resignation_file" />
-              </div></td>
-          </tr>
-            <tr>
-          
-          <td align="right" class="form_text">สถานะตำแหน่ง :</td>
-            <td align="left">
-          
-          <select  id="cwk_pos_status" name="cwk_pos_status" >
-            <option value="1"> ตำแหน่งเดิม/สังกัดเดิม</option>
-            <option value="2">ตำแหน่งใหม่/สังกัดใหม่</option>
-           
-            
+          	<td colspan="2" align="left" class="form_text"  height="1">
+				<?
+					$style="display:none";
+					if($row["CWK_STATUS"] == "02") $style="display:block";
+				?>
+				  <div id="quit"  align="left" style="padding-left:145px;<?=$style?>"> &nbsp; วันที่ลาออก :
+					&nbsp;&nbsp;
+					<input type="text" id="cwk_quit_date" name="cwk_quit_date" class="input_text" style="width: 80px; " value="<?=change_date_thai($row["CWK_QUIT_DATE"])?>"/>
+					<img src="../images/vcalendar.png" align="absmiddle" onclick="showCalendar('cwk_quit_date','YYYY-MM-DD')"  style="cursor:pointer"/> <br />
+					เหตุผลที่ออก :
+					&nbsp;&nbsp;
+					<input type="text" id="cwk_quit_reason" name="cwk_quit_reason" class="input_text" style="width: 200px; " value="<?=$row["CWK_QUIT_REASON"]?>"/><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="checkbox" id="cwk_resignation" name="cwk_resignation" value="Y" /><input type="text" id="cwk_resignation_detail" name="cwk_resignation_detail" class="input_text" style="width: 200px; " value="<?=$row["CWK_RESIGNATION_DETAIL"]?>"/>
+					<input type="file" id="cwk_resignation_file" name="cwk_resignation_file" />
+				  </div>
               </td>
-            
-              </tr>
-            
-              <tr>
+          </tr>
+          <tr>
+          	<td align="right" class="form_text">สถานะตำแหน่ง :</td>
+            <td align="left">
+				<select  id="cwk_pos_status" name="cwk_pos_status" >
+					<option value="1"> ตำแหน่งเดิม/สังกัดเดิม</option>
+					<option value="2">ตำแหน่งใหม่/สังกัดใหม่</option>
+				</select>
+              </td>
+           </tr>
+           <tr>
             
               <td width="223" align="right" class="form_text">
               * ประเภทบุคลากร
@@ -425,7 +410,7 @@ function select_executives(data){
             สั่ง ณ วันที่
             <input type="text" name="ck_order_date" id="ck_order_date" style="width: 80px; " class="input_text" value="<?= change_date_thai($row["CK_ORDER_DATE"]) ?>">
             &nbsp; <img src="../images/vcalendar.png" align="absmiddle" onclick="showCalendar('ck_order_date','YYYY-MM-DD')"  style="cursor:pointer"/></td>
-        </tr>
+      </tr>
         <tr>
           <td align="right" class="form_text">ประเภทบุคลากรย่อย :</td>
           <td align="left">
@@ -513,7 +498,7 @@ function select_executives(data){
                 <select name="cwk_mua_work_group" id="cwk_mua_work_group" class="widthFix2" style="width:480px;">
                   <?=$option_ref_department_group?>
                 </select>
-              </div>
+            </div>
         
        
           </td>
@@ -972,7 +957,7 @@ while(($row_teach = oci_fetch_array($stid_teach, OCI_BOTH))){
               <? include "ex_salary_list.php";?>
             </div>
             <br />
-            <span  id="morefile"></span><br />
+<br />
             <div style="padding-left: 140px" align="left">
               <input type="button" id="addfile" value="เพิ่ม" />
             </div>
@@ -1090,7 +1075,7 @@ while(($row_teach = oci_fetch_array($stid_teach, OCI_BOTH))){
         </td>
       </tr>
        <tr>
-        <td width="385" colspan="2" align="center"><span id="waiting"></span></td>
+        <td width="385" colspan="2" align="center">&nbsp;</td>
       </tr>
     </table>
         

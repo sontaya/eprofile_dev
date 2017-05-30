@@ -10,4 +10,14 @@
 <file name="tcpdf_parser.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676548916941" remote="131293392000000000" Dst="0" />
 <file name="tcpdf_import.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676548555966" remote="131293392000000000" Dst="0" />
 <file name="tcpdf.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676550743074" remote="131293392000000000" Dst="0" />
+<file name="CHANGELOG.TXT" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676410732300" remote="131405677200000000" Dst="0" />
+<file name="composer.json" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676410932769" remote="131405677200000000" Dst="0" />
+<file name="LICENSE.TXT" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676410632216" remote="131405677200000000" Dst="0" />
+<file name="README.TXT" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676410802360" remote="131405677200000000" Dst="0" />
+<file name="tcpdf.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676550743074" remote="131405677200000000" Dst="0" />
+<file name="tcpdf_autoconfig.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676544700690" remote="131405677200000000" Dst="0" />
+<file name="tcpdf_barcodes_1d.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676546240245" remote="131405677200000000" Dst="0" />
+<file name="tcpdf_barcodes_2d.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676546771243" remote="131405677200000000" Dst="0" />
+<file name="tcpdf_import.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676548555966" remote="131405677200000000" Dst="0" />
+<file name="tcpdf_parser.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676548916941" remote="131405677200000000" Dst="0" />
 </dwsync>

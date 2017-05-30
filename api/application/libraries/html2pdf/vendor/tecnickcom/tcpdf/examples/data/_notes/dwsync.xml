@@ -4,4 +4,8 @@
 <file name="chapter_demo_2.txt" server="dusitftp.dusit.ac.th/public_html/" local="131401676422102075" remote="131293392600000000" Dst="0" />
 <file name="utf8test.txt" server="dusitftp.dusit.ac.th/public_html/" local="131401676423034553" remote="131293392600000000" Dst="0" />
 <file name="chapter_demo_1.txt" server="dusitftp.dusit.ac.th/public_html/" local="131401676422072001" remote="131293392600000000" Dst="0" />
+<file name="chapter_demo_1.txt" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676422072001" remote="131405676600000000" Dst="0" />
+<file name="chapter_demo_2.txt" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676422102075" remote="131405676600000000" Dst="0" />
+<file name="table_data_demo.txt" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676421971734" remote="131405676600000000" Dst="0" />
+<file name="utf8test.txt" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676423034553" remote="131405676600000000" Dst="0" />
 </dwsync>

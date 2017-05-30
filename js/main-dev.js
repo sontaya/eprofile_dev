@@ -181,7 +181,7 @@ function calcDays(d1,d2,target){
         var month1=x[1]-1;
         var month2=y[1]-1;
         _Diff=Math.ceil((date2.getTime()-date1.getTime())/(one_day))+1; 
-  document.getElementById(target).value = _Diff;
+  		document.getElementById(target).value = _Diff;
 		}
 }
 
@@ -358,10 +358,11 @@ function out_button(target,target2){
 }
 
 function change_data(target,head){
+	console.log("ChangeData: "+ target);
 	if(target != ""){
 		var wait = "";
 		//wait +="<table width='770' border='0'><tr><td><img src='../images/indicator_medium.gif' align='absmiddle' style='padding-left: 350px; padding-top: 270px'/></td></tr></table>";
-		wait +="<table width='770' border='0' ><tr><td  style='padding-left: 320px; padding-top: 250px;'><div style='border: 5px solid #6CF;width: 110px;height:22px;color: #666666;font-size:16px;font-weight:bold;'>&nbsp;Loading... <img src='../images/facebook.gif' align='absmiddle' /></div></td></tr></table>";
+		wait +="<table width='770' border='0' ><tr><td  style='padding-left: 320px; padding-top: 250px;'><div style='border: 5px solid #6CF;width: 110px;height:22px;color: #666666;font-size:16px;font-weight:bold;'> Loading... <img src='../images/facebook.gif' align='absmiddle' /></div></td></tr></table>";
 		//<div class="loading">Loading...</div>
 	$("#inner_data").html(wait);
 	var ran=Math.random();
@@ -411,7 +412,7 @@ function load_page(target){
 
 function load_page2(target){
 	var ran=Math.random();
-	$('div#ex_contract_data').html("<table width='770' border='0' ><tr><td  style='padding-left: 320px; padding-top: 250px;'><div style='border: 5px solid #6CF;width: 110px;height:22px;color: #666666;font-size:16px;font-weight:bold;'>&nbsp;Loading... <img src='../images/facebook.gif' align='absmiddle' /></div></td></tr></table>");	
+	$('div#ex_contract_data').html("<table width='770' border='0' ><tr><td  style='padding-left: 320px; padding-top: 250px;'><div style='border: 5px solid #6CF;width: 110px;height:22px;color: #666666;font-size:16px;font-weight:bold;'> Loading... <img src='../images/facebook.gif' align='absmiddle' /></div></td></tr></table>");	
 	$(function(){
 		var url=target+"?"+ran; // ไฟล์ที่ต้องการรับค้า
 		//var dataSet={ name: '' }; // กำหนดชื่อและค่าที่ต้องการส่ง

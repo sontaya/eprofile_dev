@@ -3,4 +3,7 @@
 <file name="device_helper.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676389145640" remote="131293392000000000" Dst="0" />
 <file name="index.html" server="dusitftp.dusit.ac.th/public_html/" local="131401676389245639" remote="131293392000000000" Dst="0" />
 <file name="jwt_helper.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676389538840" remote="131293392000000000" Dst="0" />
+<file name="device_helper.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676389145640" remote="131405676600000000" Dst="0" />
+<file name="index.html" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676389245639" remote="131405676600000000" Dst="0" />
+<file name="jwt_helper.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676389538840" remote="131405676600000000" Dst="0" />
 </dwsync>

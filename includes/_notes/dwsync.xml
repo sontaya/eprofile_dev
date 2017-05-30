@@ -2,9 +2,7 @@
 <dwsync>
 <file name="chk_session.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676650725671" remote="131111748000000000" Dst="0" />
 <file name="class.oracle.inc.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676652206124" remote="131262456000000000" Dst="0" />
-<file name="config.inc_9_12_2014.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676652457028" remote="131111748000000000" Dst="0" />
 <file name="config.inc.php" server="dusitftp.dusit.ac.th/public_html/" local="131401677015508799" remote="131170500000000000" Dst="0" />
-<file name="config.inc_08_04_2015.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676652637727" remote="131111748000000000" Dst="0" />
 <file name="connect.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676986047609" remote="131111748000000000" Dst="0" />
 <file name="connect2.php" server="dusitftp.dusit.ac.th/public_html/" local="131401677023574731" remote="131111748000000000" Dst="0" />
 <file name="config.inci.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676653179337" remote="131111748000000000" Dst="0" />
@@ -15,4 +13,17 @@
 <file name="ldap_authen.inc.php" server="dusitftp.dusit.ac.th/public_html/" local="131401677015288215" remote="131321125800000000" Dst="0" />
 <file name="scholar_report_result6.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676655278366" remote="131111748000000000" Dst="0" />
 <file name="utf8fnc.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676655458611" remote="131111748000000000" Dst="0" />
+<file name="chk_session.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676650725671" remote="131405677800000000" Dst="0" />
+<file name="class.oracle.inc.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676652206124" remote="131405677800000000" Dst="0" />
+<file name="config.inc.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131402362815068834" remote="131405677800000000" Dst="0" />
+<file name="config.inci.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676653179337" remote="131405677800000000" Dst="0" />
+<file name="connect.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676986047609" remote="131405677800000000" Dst="0" />
+<file name="connect2.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401677023574731" remote="131405677800000000" Dst="0" />
+<file name="func.inc.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676654375964" remote="131405677800000000" Dst="0" />
+<file name="func.inc_bak.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676654797075" remote="131405677800000000" Dst="0" />
+<file name="function_interface.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676653369778" remote="131405677800000000" Dst="0" />
+<file name="ldap_authen.inc.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401677015288215" remote="131405677800000000" Dst="0" />
+<file name="savelog.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676655067770" remote="131405677800000000" Dst="0" />
+<file name="scholar_report_result6.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676655278366" remote="131405677800000000" Dst="0" />
+<file name="utf8fnc.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676655458611" remote="131405677800000000" Dst="0" />
 </dwsync>

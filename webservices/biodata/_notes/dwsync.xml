@@ -5,4 +5,9 @@
 <file name="biodataRequest.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676976343886" remote="131111748000000000" Dst="0" />
 <file name="biodataResponse.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676976463924" remote="131111748000000000" Dst="0" />
 <file name="biodataService.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676976935417" remote="131111748000000000" Dst="0" />
+<file name="biodata.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676975418595" remote="131405679000000000" Dst="0" />
+<file name="biodata.wsdl" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676976173154" remote="131405679000000000" Dst="0" />
+<file name="biodataRequest.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676976343886" remote="131405679000000000" Dst="0" />
+<file name="biodataResponse.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676976463924" remote="131405679000000000" Dst="0" />
+<file name="biodataService.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676976935417" remote="131405679000000000" Dst="0" />
 </dwsync>
