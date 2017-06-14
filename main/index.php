@@ -19,148 +19,132 @@ function chack_img($img){
 }
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ระบบบริหารงานบุคลากร กองบริหารงานบุคคล มหาวิทยาลัยสวนดุสิต</title>
-<link rel="stylesheet" type="text/css" href="../css/main1.css" />
-<link rel="stylesheet" type="text/css" href="../css/form.css" />
-<link rel="stylesheet" type="text/css" href="../css/menu.css" />
-<link rel="stylesheet" type="text/css" href="../jquery-ui-1.8.6.custom/css/smoothness/jquery-ui-1.8.6.custom.css"/>
-<link href="../css/calendar-mos.css" rel="stylesheet" type="text/css">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> 
-<link rel="stylesheet" type="text/css" href="../css/vtip.css" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ระบบบริหารงานบุคลากร กองบริหารงานบุคคล มหาวิทยาลัยสวนดุสิต</title>
+	<link rel="stylesheet" type="text/css" href="../css/main1.css" />
+	<link rel="stylesheet" type="text/css" href="../css/form.css" />
+	<link rel="stylesheet" type="text/css" href="../css/menu.css" />
+	<link rel="stylesheet" type="text/css" href="../jquery-ui-1.8.6.custom/css/smoothness/jquery-ui-1.8.6.custom.css"/>
+	<link href="../css/calendar-mos.css" rel="stylesheet" type="text/css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> 
+	<link rel="stylesheet" type="text/css" href="../css/vtip.css" />
 
-<script src="../js/jquery.min.js" type="text/javascript"></script>
-<script src="../jquery-ui-1.8.6.custom/js/jquery-ui-1.8.6.custom.min.js?Math.random()" type="text/javascript"></script>
-<script type="text/javascript" src="../jquery-ui-1.8.6.custom/development-bundle/external/jquery.bgiframe-2.1.2.js?Math.random()"></script>
+	<script src="../js/jquery.min.js" type="text/javascript"></script>
+	<script src="../jquery-ui-1.8.6.custom/js/jquery-ui-1.8.6.custom.min.js?Math.random()" type="text/javascript"></script>
+	<script type="text/javascript" src="../jquery-ui-1.8.6.custom/development-bundle/external/jquery.bgiframe-2.1.2.js?Math.random()"></script>
 
-<!--<script src="../js/menu-collapsed.js" type="text/javascript"></script>-->
-<script type="text/javascript" src="../js/ddaccordion.js?Math.random()"></script>
+	<!--<script src="../js/menu-collapsed.js" type="text/javascript"></script>-->
+	<script type="text/javascript" src="../js/ddaccordion.js?Math.random()"></script>
 
-<script src="../js/calendar.js?Math.random()" type="text/javascript"></script>
-<script src="../js/autocomplete_maste.js?Math.random()" type="text/javascript"></script>
-<script src="../js/autoComplete.js?Math.random()" type="text/javascript"></script>
-<script src="../js/myAjax.js?Math.random()" type="text/javascript"></script>
-<script src="../js/main.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/calendar.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/autocomplete_maste.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/autoComplete.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/myAjax.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/main.js?Math.random()" type="text/javascript"></script>
 
-<script src="../js/fam_data.js?Math.random()" type="text/javascript"></script>
-<script src="../js/chl_data.js?Math.random()" type="text/javascript"></script>
-<script src="../js/edu_data.js?Math.random()" type="text/javascript"></script>
-<script src="../js/position_data.js?Math.random()" type="text/javascript"></script>
-<script src="../js/sch_data.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/fam_data.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/chl_data.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/edu_data.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/position_data.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/sch_data.js?Math.random()" type="text/javascript"></script>
 
-<script src="../js/research_data.js?Math.random()" type="text/javascript"></script>
-<script src="../js/royal_data.js?Math.random()" type="text/javascript"></script>
-<script src="../js/warn_data.js?Math.random()" type="text/javascript"></script>
-<script src="../js/wrk_h_data.js?Math.random()" type="text/javascript"></script>
-<script src="../js/sem_data.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/research_data.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/royal_data.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/warn_data.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/wrk_h_data.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/sem_data.js?Math.random()" type="text/javascript"></script>
 
-<script src="../js/constructor_data.js?Math.random()" type="text/javascript"></script>
-<script src="../js/consult_data.js?Math.random()" type="text/javascript"></script>
-<script src="../js/ajax_depsub.js?Math.random()" type="text/javascript"></script>
-<script src="../js/register.js" type="text/javascript"></script>
-<script src="../js/new_person.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/constructor_data.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/consult_data.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/ajax_depsub.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/register.js" type="text/javascript"></script>
+	<script src="../js/new_person.js?Math.random()" type="text/javascript"></script>
 
-<script src="../js/appraise_data.js?Math.random()" type="text/javascript"></script>
-<script src="../js/committee.js?Math.random()" type="text/javascript"></script>
-<script src="../js/retire_data.js?Math.random()" type="text/javascript"></script>
-<script src="../js/honor_data.js?Math.random()" type="text/javascript"></script>
-<script src="../js/la_data.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/appraise_data.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/committee.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/retire_data.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/honor_data.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/la_data.js?Math.random()" type="text/javascript"></script>
 
-<script src="../js/fi_data.js?Math.random()" type="text/javascript"></script>
-<script src="../js/money_fund_data.js?Math.random()" type="text/javascript"></script>
-<script src="../js/certificate_data.js?Math.random()" type="text/javascript"></script>
-<script src="../js/function_interface.js" type="text/javascript"></script>
-<script src="../js/vtip.js?Math.random()" type="text/javascript"></script>
-<script src="../js/shortcut.js?Math.random()" type="text/javascript"></script>
-<script type="text/javascript">
-ddaccordion.preloadimages(jQuery(ddaccordion.ajaxloadingmsg).filter('img'))
+	<script src="../js/fi_data.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/money_fund_data.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/certificate_data.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/function_interface.js" type="text/javascript"></script>
+	<script src="../js/vtip.js?Math.random()" type="text/javascript"></script>
+	<script src="../js/shortcut.js?Math.random()" type="text/javascript"></script>
+	<script type="text/javascript">
+	ddaccordion.preloadimages(jQuery(ddaccordion.ajaxloadingmsg).filter('img'))
 
-ddaccordion.init({
-	headerclass: "headerbar", //Shared CSS class name of headers group
-	contentclass: "submenu", //Shared CSS class name of contents group
-	revealtype: "click", //Reveal content when user clicks or onmouseover the header? Valid value: "click", "clickgo", or "mouseover"
-	mouseoverdelay: 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
-	collapseprev: true, //Collapse previous content (so only one open at any time)? true/false
-	defaultexpanded: [0], //index of content(s) open by default [index1, index2, etc] [] denotes no content
-	onemustopen: true, //Specify whether at least one header should be open always (so never all headers closed)
-	animatedefault: false, //Should contents open by default be animated into view?
-	persiststate: true, //persist state of opened contents within browser session?
-	toggleclass: ["", "selected"], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively ["class1", "class2"]
-	togglehtml: ["", "", ""], //Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", "html2"] (see docs)
-	animatespeed: "normal", //speed of animation: integer in milliseconds (ie: 200), or keywords "fast", "normal", or "slow"
-	oninit:function(headers, expandedindices){ //custom code to run when headers have initalized
-		//do nothing
-	},
-	onopenclose:function(header, index, state, isuseractivated){ //custom code to run whenever a header is opened or closed
-		//do nothing
+	ddaccordion.init({
+		headerclass: "headerbar", //Shared CSS class name of headers group
+		contentclass: "submenu", //Shared CSS class name of contents group
+		revealtype: "click", //Reveal content when user clicks or onmouseover the header? Valid value: "click", "clickgo", or "mouseover"
+		mouseoverdelay: 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
+		collapseprev: true, //Collapse previous content (so only one open at any time)? true/false
+		defaultexpanded: [0], //index of content(s) open by default [index1, index2, etc] [] denotes no content
+		onemustopen: true, //Specify whether at least one header should be open always (so never all headers closed)
+		animatedefault: false, //Should contents open by default be animated into view?
+		persiststate: true, //persist state of opened contents within browser session?
+		toggleclass: ["", "selected"], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively ["class1", "class2"]
+		togglehtml: ["", "", ""], //Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", "html2"] (see docs)
+		animatespeed: "normal", //speed of animation: integer in milliseconds (ie: 200), or keywords "fast", "normal", or "slow"
+		oninit:function(headers, expandedindices){ //custom code to run when headers have initalized
+			//do nothing
+		},
+		onopenclose:function(header, index, state, isuseractivated){ //custom code to run whenever a header is opened or closed
+			//do nothing
+		}
+	})
+
+	function change_color(id){
+	  $("#menu"+id).addClass("menu_visited");
+
 	}
-})
 
-function change_color(id){
-  $("#menu"+id).addClass("menu_visited");
-//	document.getElementById("menu"+id).style.backgroundColor = "#d5aec9";
-//	document.getElementById("menu"+id).style.color = "#033";
-//	document.getElementById("menu"+id).style.fontWeight = "bold";
-//	document.getElementById("menu"+id).style.paddingLeft = "9px";
-//	var i ;
-//	for( i = 1;i<40;i++){
-//		if(i != id){
-//			document.getElementById("menu"+i).style.backgroundColor = "#ebcbe1";
-//			//document.getElementById("menu"+i).style.paddingLeft = "";
-//			document.getElementById("menu"+i).style.fontWeight = "";
-//		}
-//	}
-}
-/*
-$(window).unload(function() {
-	$.ajax({
-		type: 'GET',
-		url: 'logout.php'
-	});
-});
-*/
+	</script>
+	 <script type="text/javascript">
 
-</script>
- <script type="text/javascript">
-   
-   
 
-	function change_permit(empID,empName,empType){
-		//alert(empID);
-		$('#change_permit_dialog').dialog({
-			buttons: {"ตกลง" : function() { ajax_change_permit();}},
-			modal: true,
-			resizable: false
-			});
-            
-        $('#user_permit_value').val(empType);
-		$('#user_permit_name').text(empName);
-		$('#user_permit_empid').text(empID);
-	}
-	//change_permit('1234');
-	
-	function ajax_change_permit() {
-		var permit_value = $('#user_permit_value').val();
-		var permit_empid = $('#user_permit_empid').text();
-		//alert(permit_value + '\n'+permit_empid);
-		$.ajax({
-			type: 'POST',
-			data: {permit_value: permit_value, permit_empid: permit_empid},
-			success: function(data) {
-				$('#change_permit_dialog').dialog("close");
-			},
-			beforeSend: function() {
-			},
-			url: 'change_permission.php'
-			});
-	}
-	
-	shortcut.add("Backspace", function() {return false;}, { 'type': 'keydown', 'disable_in_input': true }); 
-	
-</script>
+
+		function change_permit(empID,empName,empType){
+			//alert(empID);
+			$('#change_permit_dialog').dialog({
+				buttons: {"ตกลง" : function() { ajax_change_permit();}},
+				modal: true,
+				resizable: false
+				});
+
+			$('#user_permit_value').val(empType);
+			$('#user_permit_name').text(empName);
+			$('#user_permit_empid').text(empID);
+		}
+		//change_permit('1234');
+
+		function ajax_change_permit() {
+			var permit_value = $('#user_permit_value').val();
+			var permit_empid = $('#user_permit_empid').text();
+			//alert(permit_value + '\n'+permit_empid);
+			$.ajax({
+				type: 'POST',
+				data: {permit_value: permit_value, permit_empid: permit_empid},
+				success: function(data) {
+					$('#change_permit_dialog').dialog("close");
+				},
+				beforeSend: function() {
+				},
+				url: 'change_permission.php'
+				});
+		}
+
+		shortcut.add("Backspace", function() {return false;}, { 'type': 'keydown', 'disable_in_input': true }); 
+
+	</script>
 </head>
 <body>
     <a name="top_main" id="top_main"></a>
@@ -247,15 +231,30 @@ $(window).unload(function() {
 </div>
 <iframe id="upload_target" name="upload_target" src="#" style="width:0px;height:0px;border:0px solid #fff;display:none;" ></iframe> 
 <iframe id="upload_target2" name="upload_target2" src="#" style="width:0px;height:0px;border:0px solid #fff;display:none;" ></iframe>
-<?php 
-/*
-	echo "<pre>";
-	print_r($_SESSION);
-	echo "</pre>";
-*/
-?> 
+
 <script>
 	user_name_thai("<?=$_SESSION["watching"]?>","watching");
 </script>
+
+
+<script>
+	window.onload = function(){
+		console.log(Date.now() + ": On Load");
+		console.log("localStorage: "+ localStorage.getItem('pageTarget'));
+		
+		var url= localStorage.getItem('pageTarget');
+		
+		if(url == ""){
+			var ran=Math.random();
+			change_data("bio_data.php?"+ran,"../images/head2/bio/biodata.png");
+			load_dialog();
+		}else{
+			
+			change_data(url, "../images/head2/bio/biodata.png");
+			load_dialog();
+		}
+	}	
+</script>
+
 </body>
 </html>

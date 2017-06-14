@@ -69,7 +69,6 @@ class DB{
         $add=$add.")"; 
         $val=$val.")"; 
          $sql="INSERT INTO ".$table." ".$add." VALUES ".$val; 
-echo "<br>".$sql;
 		 $stid = oci_parse($conn, $sql );
 		 
 		

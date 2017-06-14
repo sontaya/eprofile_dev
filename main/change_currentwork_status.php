@@ -7,112 +7,103 @@
 
 @session_start();
 $emp_id = $_SESSION["EMP_ID"];
+$person_id = $_SESSION["PERSON_ID"];
  	$fpath = '';
 	require_once($fpath."../includes/connect.php");
 
-
 ?>
 
+<h3>บันทึกการปรับเปลี่ยนสถานะ</h3>
+<hr>
 
-<table width="90%" align="center" class="table table-bordered table-hover table-striped text-center" >
-   <thead>
-    	<tr align="center"  class="text_th">
-			<td class="text_tr">ลำดับ</td>
-			<td class="text_tr">ประเภทบุคลากร</td>
-			<td class="text_tr">หน่วยงานหลัก</td>
-			<td class="text_tr">วันที่เข้าทำงาน</td>
-			<td class="text_tr">สถานะ</td>
-			<td class="text_tr">มีผลตั้งเเต่</td>
-			<td class="text_tr">ไฟล์เอกสาร</td>
-			<td class="text_tr">เเก้ไข/เเสดง/ลบ</td>
-    	</tr>
-	</thead> 
-   <tbody>
-      	<tr align="center"  class="text_th">
-			<td >ลำดับ</td>
-			<td >ประเภทบุคลากร</td>
-			<td >หน่วยงานหลัก</td>
-			<td >วันที่เข้าทำงาน</td>
-			<td >สถานะ</td>
-			<td >มีผลตั้งเเต่</td>
-			<td >ไฟล์เอกสาร</td>
-			<td ></td>
-    	</tr> 	
-   </tbody>   
+    <div id="table-result-box"></div>
 
     
-    </table>
+    <div class="text-center">
+    	<a href="#" class="btn btn-primary add-record"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add</a>
+    </div>
+    
     <hr>   
-        <?
 
-		$sql = "SELECT * FROM  ".TB_SDU_CHANGE_JOB_TAB." WHERE EMP_ID='".$emp_id."' ORDER BY CJ_ID DESC";
-		$stid = oci_parse($conn, $sql );
-		oci_execute($stid);
-		$id = 1;
-		$cj=0;
-
-		while (($row = oci_fetch_array($stid, OCI_BOTH))) { 
-			$cj++;
-			//$no = $row["SCH_ORDER_NO"];
-			$id++;
-		}
-	?>
-     
-
-   
     <?
 		oci_free_statement($stid);
  	 ?>
 
 <div id="submit-result-box"></div>
+<div id="delete-result-box"></div>
 
-<form id=MyForm class="form-horizontal" method="post" enctype="multipart/form-data">
-	<fieldset>
-		<div class="form-group">
-			<label for="inputCwkStatus" class="col-md-2 col-md-offset-1 control-label">สถานะ</label>
-			<div class="col-md-4">
-				<select  id="input_sl_status" name="sl_status" class="form-control" onchange="quit(this.value);" >
-					<option value="01" >ปฏิบัติการ</option>
-					<option value="02" >ลาออก</option>
-					<option value="03" >ลาศึกษาต่อ</option>
-					<option value="04" >เกษียนอายุ</option>
-					<option value="05" >ปฏิบัติการตามวาระ</option>
-					<option value="07" >เสียชีวิต</option>
-			  	</select>
-			</div>
-		</div>
-		<div class="form-group">
-			<label for="inputCwkStatus" class="col-md-2 col-md-offset-1 control-label">หมายเหตุ</label>
-			<div class="col-md-6">
-				<textarea rows="4" cols="50" name="sl_reason" id="input_sl_reason" class="form-control"></textarea>
-			</div>
-		</div>
-		<div class="form-group">
-			<label for="inputCwkStatus" class="col-md-2 col-md-offset-1 control-label">* มีผลตั้งเเต่<!--(สกอ.)--> :</label>
-			<div class="col-md-4">
-				<input type="text" name="sl_effective_date" id="input_effective_date" class="form-control">
-			</div>
-			<div class="col-md-1">
-				<img src="../images/vcalendar.png" onclick="showCalendar('start_st','YYYY-MM-DD')"  style="cursor:pointer" class="img-responsive" />
-			</div>
-		</div>
-		<div class="form-group">
-			<div class="col-md-6 col-md-offset-1">
-                 <input id="FileInput" name="file" type="file" >
-			</div>
-		</div>
-		<div class="form-group">
-		  <div class="col-lg-10 col-lg-offset-2">
-		    <input type="hidden" name="emp_id" id="input_emp_id" class="form-control" value="">
-            <input type="hidden" name="mod_mode" id="mod_mode" class="form-control" value="">
+<div id="form-box" style="display: none">
+	
 
-			<button type="reset" class="btn btn-default">Cancel</button>			
-			<button type="button" id="inputSave" class="btn btn-primary" >Save</button>
-		  </div>
-    	</div>
-				
-	</fieldset>
-</form>
+	<div class="panel panel-default">
+		<div class="panel-heading"></div>
+		<div class="panel-body">
+
+			
+			<form id=MyForm class="form-horizontal" method="post" enctype="multipart/form-data">
+				<fieldset>
+					<div class="form-group">
+						<label for="inputCwkStatus" class="col-md-2 col-md-offset-1 control-label">สถานะ</label>
+						<div class="col-md-4">
+							<select  id="input_sl_status" name="sl_status" class="form-control" onchange="quit(this.value);" >
+								<option value="01" >ปฏิบัติการ</option>
+								<option value="02" >ลาออก</option>
+								<option value="03" >ลาศึกษาต่อ</option>
+								<option value="04" >เกษียนอายุ</option>
+								<option value="05" >ปฏิบัติการตามวาระ</option>
+								<option value="07" >เสียชีวิต</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputCwkStatus" class="col-md-2 col-md-offset-1 control-label">หมายเหตุ</label>
+						<div class="col-md-6">
+							<textarea rows="4" cols="50" name="sl_reason" id="input_sl_reason" class="form-control"></textarea>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="input_sl_effective" class="col-md-2 col-md-offset-1 control-label">มีผลตั้งเเต่</label>
+						<div class="input-group date form_date col-md-5" data-date="" data-date-format="dd MM yyyy" data-link-field="input_sl_effective" data-link-format="yyyy-mm-dd">
+							<input class="form-control" size="16" type="text" value="" readonly>
+							<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+							<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+						</div>
+						<input type="hidden" id="input_sl_effective" value="" /><br/>
+					</div>
+
+					<div class="form-group">
+						<label for="inputCwkStatus" class="col-md-2 col-md-offset-1 control-label">เอกสาร</label>
+						<div class="col-md-6">
+							 <input id="FileInput" name="file" 
+								type="file" class="file-loading" 
+								multiple=false 
+								data-show-upload="false" 
+								>
+						</div>
+					</div>
+					<div class="form-group">
+					  <div class="col-lg-10 col-lg-offset-2">
+						<input type="hidden" name="emp_id" id="input_emp_id" class="form-control" value="">
+						<input type="hidden" name="mod_mode" id="mod_mode" class="form-control" value="">
+
+						<button type="reset" class="btn btn-default">Cancel</button>			
+						<button type="button" id="inputSave" class="btn btn-primary" >Save</button>
+					  </div>
+					</div>
+
+				</fieldset>
+			</form>						
+												
+		</div>
+	</div>
+
+
+
+
+
+	
+</div>
 
 <?
 	$db->closedb($conn);
@@ -120,21 +111,29 @@ $emp_id = $_SESSION["EMP_ID"];
 
 <script>
 	$(document).ready(function(){
+		
+		initTable();
+		
+		$("#FileInput").fileinput({			
+			browseClass: "btn btn-success",
+			browseLabel: " เลือกไฟล์",
+			browseIcon: '<i class="glyphicon glyphicon-picture"></i>',
+			removeClass: "btn btn-danger",
+			removeLabel: "Delete",
+			removeIcon: '<i class="glyphicon glyphicon-trash"></i>',
+			overwriteInitial: false,
+			showPreview: false,
+		});
+		
 		$("#inputSave").click(function(){
 			var form_data = new FormData();
 			var file_data = $('#FileInput').prop('files')[0];   
 			
-			form_data.append('file', file_data);
+			form_data.append('ccs', file_data);
 			
-/*			form_data.append('hid_mode', $("#hid_mode").val());
-			form_data.append('document_id', $("#mod_document_id").val());
-			form_data.append('list_order', list_order);
-			form_data.append('title', $("#mod_title").val());
-			form_data.append('document_category', $("#mod_document_category").val());
-*/
 			form_data.append('sl_status',$("#input_sl_status").val());
 			form_data.append('sl_reason',$("#input_sl_reason").val());
-			form_data.append('effective_date',$("#input_effective_date").val());
+			form_data.append('sl_effective',$("#input_sl_effective").val());
 			$.ajax({
 				url: 'ajax_currentwork_status_submit.php', // point to server-side PHP script 
 				dataType: 'text',  // what to expect back from the PHP script, if anything
@@ -144,11 +143,96 @@ $emp_id = $_SESSION["EMP_ID"];
 				data: form_data,                         
 				type: 'post',
             	success: function (ReturnData) {
-              		$("#submit-result-box").html(ReturnData); 
+              		//$("#submit-result-box").html(ReturnData); 
+					/*swal({
+					  title: "Error!",
+					  text: "Here's my error message!",
+					  type: "error",
+					  confirmButtonText: "Cool"
+					});*/
+					swal({
+						title: "บันทึกข้อมูลเรียบร้อย",
+						timer: 2000,
+						showConfirmButton: false
+					});
+					initTable();
             	}
 			});
 		});
+		
+		$('.add-record').click(function(){
+			$("#form-box").fadeIn(1000);
+		});
+
+		
+		$('.form_date').datetimepicker({
+			weekStart: 1,
+			todayBtn:  1,
+			autoclose: 1,
+			todayHighlight: 1,
+			startView: 2,
+			minView: 2,
+			forceParse: 0
+		});
+		
 	});
+	
+
+	
+	function initTable(){
+		$.ajax({
+				url: 'ajax_currentwork_status_table.php', // point to server-side PHP script 
+				dataType: 'text',  // what to expect back from the PHP script, if anything
+				cache: false,
+				contentType: false,
+				processData: false,
+				type: 'get',
+            	success: function (ReturnTableData) {
+              		$("#table-result-box").html(ReturnTableData); 
+					
+            	}
+			});
+	}
+	
+	function delete_sl(idx){
+		
+
+		
+		swal({
+		  title: "ยืนยันการลบข้อมูล",
+		  type: "warning",
+		  showCancelButton: true,
+		  confirmButtonColor: "#DD6B55",
+		  confirmButtonText: "Yes, delete it!",
+		  closeOnConfirm: false
+		},
+		function(){
+			console.log('delete: '+ idx);
+			var form_data = new FormData();
+			form_data.append('sl_id',idx);
+			
+			$.ajax({
+				url: 'ajax_currentwork_status_delete.php', // point to server-side PHP script 
+				dataType: 'text',  // what to expect back from the PHP script, if anything
+				cache: false,
+				contentType: false,
+				processData: false,
+				data: form_data,                         
+				type: 'post',
+            	success: function (ReturnData) {
+              		//$("#delete-result-box").html(ReturnData); 
+					swal({
+						title: "ลบข้อมูลเรียบร้อย",
+						timer: 2000,
+						showConfirmButton: false
+					});
+					initTable();
+            	}
+			});			
+			
+		 
+		});		
+	}
 </script>
 
 

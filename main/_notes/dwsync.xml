@@ -265,7 +265,6 @@
 <file name="regis_form_save.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676891002025" remote="131243940000000000" Dst="0" />
 <file name="register_save.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676891152355" remote="131111748000000000" Dst="0" />
 <file name="register.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676891302764" remote="131111748000000000" Dst="0" />
-<file name="register_save.php.bak" server="dusitftp.dusit.ac.th/public_html/" local="131401676891353023" remote="131111748000000000" Dst="0" />
 <file name="register_save_bak.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676891523341" remote="131111748000000000" Dst="0" />
 <file name="res_cre_data_table.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676891613590" remote="131111748000000000" Dst="0" />
 <file name="research_creative.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676891744006" remote="131111748000000000" Dst="0" />
@@ -414,9 +413,9 @@
 <file name="workh_data_table.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676934487619" remote="131111748000000000" Dst="0" />
 <file name="wrk_data_del.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676934628157" remote="131111748000000000" Dst="0" />
 <file name="scholar_27_01_2015.php" server="dusitftp.dusit.ac.th/public_html/" local="131401676917099707" remote="131111748000000000" Dst="0" />
-<file name="menu.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676873170386" remote="131401438200000000" Dst="0" />
-<file name="index.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401690627031119" remote="131401438200000000" Dst="0" />
-<file name="index-dev.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131402444458853632" remote="131402191800000000" Dst="0" />
+<file name="menu.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131418255384346394" remote="131418003000000000" Dst="0" />
+<file name="index.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131418258969532518" remote="131418006600000000" Dst="0" />
+<file name="index-dev.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131418259021505895" remote="131418006600000000" Dst="0" />
 <file name="update_by.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676929202582" remote="131401445400000000" Dst="0" />
 <file name="current_work_data_save.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676823080486" remote="131401445400000000" Dst="0" />
 <file name="ex_salary_list.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676834765850" remote="131401445400000000" Dst="0" />
@@ -424,9 +423,9 @@
 <file name="current_work.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401715953057455" remote="131401463400000000" Dst="0" />
 <file name="change_job_table.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676813163824" remote="131401528200000000" Dst="0" />
 <file name="change_job_save.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676813103652" remote="131401528200000000" Dst="0" />
-<file name="change_currentwork_status.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131403253810000000" remote="131405678400000000" Dst="0" />
+<file name="change_currentwork_status.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131414715053846524" remote="131414463000000000" Dst="0" />
 <file name="dialog.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676827402342" remote="131401560600000000" Dst="0" />
-<file name="ajax_currentwork_status_submit.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131403282717348144" remote="131403030000000000" Dst="0" />
+<file name="ajax_currentwork_status_submit.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131407727284921596" remote="131407474800000000" Dst="0" />
 <file name="_00_ldap.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676795524802" remote="131405678400000000" Dst="0" />
 <file name="_00_sample.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676796297091" remote="131405678400000000" Dst="0" />
 <file name="_c_graph1.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676796357338" remote="131405678400000000" Dst="0" />
@@ -682,7 +681,6 @@
 <file name="regis_form_save.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676891002025" remote="131405679000000000" Dst="0" />
 <file name="register.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676891302764" remote="131405679000000000" Dst="0" />
 <file name="register_save.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676891152355" remote="131405679000000000" Dst="0" />
-<file name="register_save.php.bak" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676891353023" remote="131405679000000000" Dst="0" />
 <file name="register_save_bak.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676891523341" remote="131405679000000000" Dst="0" />
 <file name="res_cre_data_table.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676891613590" remote="131405679000000000" Dst="0" />
 <file name="research_creative.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676891744006" remote="131405679000000000" Dst="0" />
@@ -830,4 +828,8 @@
 <file name="workh_data_save.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676934176792" remote="131405679000000000" Dst="0" />
 <file name="workh_data_table.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676934487619" remote="131405679000000000" Dst="0" />
 <file name="wrk_data_del.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131401676934628157" remote="131405679000000000" Dst="0" />
+<file name="index-dev2.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131406859251370814" remote="131406607200000000" Dst="0" />
+<file name="ajax_currentwork_status_delete.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131407743988468572" remote="131407491600000000" Dst="0" />
+<file name="cron_ccs.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131407851437449303" remote="131407599000000000" Dst="0" />
+<file name="ajax_currentwork_status_table.php" server="dusitftp.dusit.ac.th/public_html/eprofile_dev/" local="131408645891470967" remote="131408393400000000" Dst="0" />
 </dwsync>

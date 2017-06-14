@@ -26,24 +26,6 @@ function toggle_form2(form,id){
 }
 
 
-/*function menuList(){
-        if (document.all&&document.getElementById) {
-            navRoot = document.getElementById("sidenav");
-            for (i=0; i<navRoot.childNodes.length; i++) {
-                node = navRoot.childNodes[i];
-                if (node.nodeName=="LI") {
-                    node.onmouseover=function() {
-                        this.className+=" over";
-                    }
-                    node.onmouseout=function() {
-                        this.className=this.className.replace(" over", "");
-                    }
-                }
-            }
-        }
-    }
-*/
-
 function trim_string(x) {
     return x.replace(/^\s+|\s+$/gm,'');
 }
@@ -357,45 +339,6 @@ function out_button(target,target2){
 	document.getElementById(target2).style.display="none";
 }
 
-function change_data(target,head){
-	console.log("ChangeData: "+ target);
-	if(target != ""){
-		var wait = "";
-		//wait +="<table width='770' border='0'><tr><td><img src='../images/indicator_medium.gif' align='absmiddle' style='padding-left: 350px; padding-top: 270px'/></td></tr></table>";
-		wait +="<table width='770' border='0' ><tr><td  style='padding-left: 320px; padding-top: 250px;'><div style='border: 5px solid #6CF;width: 110px;height:22px;color: #666666;font-size:16px;font-weight:bold;'> Loading... <img src='../images/facebook.gif' align='absmiddle' /></div></td></tr></table>";
-		//<div class="loading">Loading...</div>
-	$("#inner_data").html(wait);
-	var ran=Math.random();
-	$(function(){
-		var url=target+"?"+ran; // ไฟล์ที่ต้องการรับค้า
-		//var dataSet={ name: '' }; // กำหนดชื่อและค่าที่ต้องการส่ง
-		$.post(url,function(data){
-			$('html, body').animate({scrollTop: $("#top_main").offset().top}, 1000);
-			$('div.head').html("<img src='"+head+"' />");
-    		$('#inner_data').html(data);	
- 		 });
-	});
-	
-	}else{
-		
-		$(function(){
-			$('#Not_finish').dialog({
-				resizable: false,
-				autoOpen: false,
-				modal: true,
-				hide: 'slide',
-				show: 'slide',
-				buttons: {
-					ตกลง: function() {
-						$(this).dialog('close');
-					}
-				}
-			});
-		});
-		$("#Not_finish").dialog('open');
-	}
-	
-}
 
 function load_page(target){
 	var ran=Math.random();
@@ -481,4 +424,61 @@ function getDateObject(dateString,dateSeperator)
   //Create Date Object
   dtObject=new Date(cYear,cMonth,cDate);
   return dtObject;
+}
+
+
+
+
+
+/*===========================================================
+Modify for new modules
+=============================================================*/
+
+function change_data(target,head){
+	console.log("ChangeData: "+ target);
+	if(target != ""){
+		var wait = "";
+		
+		wait +="<table width='770' border='0' ><tr><td  style='padding-left: 320px; padding-top: 250px;'><div style='border: 5px solid #6CF;width: 110px;height:22px;color: #666666;font-size:16px;font-weight:bold;'> Loading... <img src='../images/facebook.gif' align='absmiddle' /></div></td></tr></table>";
+		
+	$("#inner_data").html(wait);
+	var ran=Math.random();
+	$(function(){
+		var url=target+"?"+ran; // ไฟล์ที่ต้องการรับค้า
+		$.post(url,function(data){
+			
+			$('html, body').animate({scrollTop: $("#top_main").offset().top}, 1000);
+			$('div.head').html("<img src='"+head+"' />");
+    		$('#inner_data').html(data);	
+ 		 });
+	});
+	
+	}else{
+		
+		$(function(){
+			$('#Not_finish').dialog({
+				resizable: false,
+				autoOpen: false,
+				modal: true,
+				hide: 'slide',
+				show: 'slide',
+				buttons: {
+					ตกลง: function() {
+						$(this).dialog('close');
+					}
+				}
+			});
+		});
+		$("#Not_finish").dialog('open');
+	}
+	
+}
+
+
+function getURLParameter(name) {
+  	return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+}	
+
+function change_data_location(target){
+	window.location.href = "./index-dev.php?target="+target;
 }

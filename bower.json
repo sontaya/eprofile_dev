@@ -15,6 +15,6 @@
     "tests"
   ],
   "dependencies": {
-    "eonasdan-bootstrap-datetimepicker": "^4.17.47"
+    "bootstrap-fileinput": "^4.4.1"
   }
 }

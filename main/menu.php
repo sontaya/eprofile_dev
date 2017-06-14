@@ -104,6 +104,7 @@ if ($user_type == "chief" && $_SESSION['USER_EMP_ID'] != $_SESSION['EMP_ID']) {
 <? if ($menu_header[1]) { ?>
     <div  class="headerbar" ><?php if ($_SESSION['USER_TYPE'] == 'chief') { ?>ค้นหา<?php } else { ?>ผู้ดูแลระบบ<?php } ?></div>
     <ul class="submenu" <?= $user_head1 ?>>
+        
   <? if ($menu[1]) { ?>
         <li ><a  onclick="change_color(1);change_data('new_person.php','../images/head2/bio/new_person.png');"  id="menu1" >เพิ่มประวัติบุคลากร</a></li>
       <? } ?>
@@ -138,9 +139,9 @@ if ($user_type == "chief" && $_SESSION['USER_EMP_ID'] != $_SESSION['EMP_ID']) {
       <? if ($menu[44]) { ?>
         <li ><a onclick="change_color(44);change_data('views_sga_search.php','');" id="menu44">สร้างไฟล์ ส่ง  สกอ.</a></li>
       <? } ?>
-<!--        <? if ($menu[50]) { ?>
-        <li ><a onclick="change_color(50);change_data('file_book_data.php','../images/head2/bio/file_manu.png');" id="menu50">ไฟล์เอกสารที่เกี่ยวข้อง</a></li>
-      <? } ?>-->
+        <? if ($menu[50]) { ?>
+        <li ><a onclick="change_data_location('change_currentwork_status');" id="menu50">เปลี่ยนสถานะบุคลากร</a></li>
+      <? } ?>
 
     </ul>
     <div style="height:1px"></div>
